@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>epp-learning-objectives-teaching-grading</title>
+  <style>
+    html {
+      line-height: 1.7;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 40em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin-top: 1.7em;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.7em;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1.7em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1.7em 0 1.7em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      font-style: italic;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      background-color: #f0f0f0;
+      font-size: 85%;
+      margin: 0;
+      padding: .2em .4em;
+    }
+    pre {
+      line-height: 1.5em;
+      padding: 1em;
+      background-color: #f0f0f0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin-top: 1.7em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+    }
+    th, td {
+      border-bottom: 1px solid lightgray;
+      padding: 1em 3em 1em 0;
+    }
+    header {
+      margin-bottom: 6em;
+      text-align: center;
+    }
+    nav a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h4 id="effective-programming-practices-for-economists-winter-term-202021">Effective Programming Practices for Economists, Winter Term 2020/21</h4>
+<h4 id="universität-bonn-department-of-economics">Universität Bonn, Department of Economics</h4>
+<h4 id="prof.-dr.-hans-martin-von-gaudecker">Prof. Dr. Hans-Martin von Gaudecker</h4>
+<h1 id="learning-objectives-the-flipped-classroom-concept-and-grading">Learning objectives, the flipped classroom concept, and grading</h1>
+<p>This document provides all the basics you need to know around this course.</p>
+<ol type="1">
+<li><a href="#learning-objectives">A list of what you can expect to be able to do at the end of the course</a></li>
+<li><a href="#the-flipped-classroom-concept">A description of the flipped classroom concept and why we chose it</a></li>
+<li><a href="#assessment">A description of how grading works and why it works that way</a></li>
+<li><a href="#required-programmes">A list of the required programmes that you will need to install on your machine</a></li>
+</ol>
+<h2 id="housekeeping">Housekeeping</h2>
+<ul>
+<li>Classes take place on Thursdays 8:30-11:45h via Zoom, <a href="https://uni-bonn.zoom.us/j/91233994449?pwd=cVI5VHAwZWh1eW1PUTNCaVZqSkZ6dz09">https://uni-bonn.zoom.us/j/91233994449?pwd=cVI5VHAwZWh1eW1PUTNCaVZqSkZ6dz09</a></li>
+<li><strong>In order to receive credits for this course, you will need to register on BASIS between 9 and 16 November!</strong></li>
+<li>Please register on our <a href="https://bonn-econ-teaching.zulipchat.com/join/v5nlgahd4mxh35vc7uai7nls/">Zulip instance</a>, which we will use as the major medium to exchange information. All questions with respect to the course should go there, usually into the relevant thread/topic (create a new topic if it seems useful — the broad idea is that topics are similar to email headings. As long as it is related closely enough, reply. Else start a new one.). Only if it is something personal, please DM hmg-teaching.</li>
+<li>Get an account on <a href="https://github.com/">GitHub</a>. You do not need to use your Uni-ID to register, but please make sure that it is among the e-Mail addresses you register with GitHub. You can do so at <a href="https://github.com/settings/emails">this link</a>.</li>
+<li>The due dates for the assignments will be announced as we hand them out; depending on their length and difficulty you will have between 5 and 14 days to complete them</li>
+<li>Your reflection on the Pentabilities feedback is <strong>due on 6 January 2021</strong></li>
+<li>The topic for the final project will be agreed upon on <strong>11 February 2021</strong>. Make sure you know what you will be working on by then. Please approach us early enough if you have no idea what you want to work on yet.</li>
+<li>The final project will be due on <strong>14 March 2021</strong></li>
+</ul>
+<h2 id="learning-objectives">Learning objectives</h2>
+<p>Modern didactics starts by defining a set of <strong>active</strong> knowledge you should have developed at the end of the course. The course contents are then derived from that and so is the <a href="#the-flipped-classroom-concept">teaching style</a>. Finally, the <a href="#assessment">things we require you to do in order to pass the course</a> are designed to require exactly those skills that we hope you will develop.</p>
+<p>We group the learning objectives into four categories: - Methods (core concepts and abstract coding skills) - Tools (specific programmes, which you may want to use in the long run or not) - Personal skills - Social skills</p>
+<p>We will now describe each of these in turn.</p>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>Students master the basic techniques to make current and past versions of their research reproducible</li>
+<li>Students solve reasonably complex economic problems using the help of a computer</li>
+<li>Students are able to write correct code in an efficient manner employing modern software engineering techniques</li>
+<li>Students reason about the structure of economic data and handle such data efficiently</li>
+</ul>
+<h3 id="tools">Tools</h3>
+<ul>
+<li>Students use a shell for navigating the directory system and for starting programmes</li>
+<li>Students routinely use <em>Git</em> for version control and collaborating with coauthors</li>
+<li>Students manage economic data using basic <em>pandas</em> functionality</li>
+<li>Students automate repetitive tasks using Python</li>
+<li>Students visualize data using <em>seaborn</em> and <em>matplotlib</em></li>
+<li>Students leverage build frameworks for running analysis pipelines (e.g., <em>pytask</em>, <em>waf</em>)</li>
+<li>Students speed up their code using <em>numpy</em> and <em>numba</em></li>
+<li>Students write automated unit tests using the <em>pytest</em> framework</li>
+<li>Students find solutions to specific programming problems through sensible use of search engines and websites like <em>Stack Overflow</em></li>
+</ul>
+<h3 id="personal">Personal</h3>
+<ul>
+<li>Students manage their time efficiently when solving long and complex tasks</li>
+<li>Students seek for help when stuck and explain their problems in a comprehensible fashion</li>
+<li>Students increase their frustration tolerance when pushing the limits of their coding abilities</li>
+<li>Students reflect on lecture material and distill the important gists themselves</li>
+<li>Students employ the scientific method when improving the correctness and efficiency code</li>
+<li>Students reflect on their own contribution to collaborative work</li>
+</ul>
+<h3 id="social">Social</h3>
+<ul>
+<li>Students collaborate effectively for solving tasks of varying complexity</li>
+<li>Students reason about code and solution strategies in groups and in plenary sessions</li>
+<li>Students explain the contents and takeaways of preparation materials and in-class activities to group members who find it hard to follow along</li>
+<li>Students assess different dimensions of contributions to constructive group work</li>
+</ul>
+<h2 id="the-flipped-classroom-concept">The flipped classroom concept</h2>
+<p>Between 2010 and 2019, I taught this course in a somewhat traditional manner. I lectured on programmes, coding styles, best practices, etc.. Students were required to show they had a grasp on these by means of challenging homeworks and a final project. While student feedback had generally been good, I was unable to overcome two challenges using this concept. Essentially, there was so much heterogeneity in prior knowledge (note that when it comes to the contents of this course, there is nothing like a basic course in macroeconomics or econometrics to build upon), that it was impossible to pace the lecture. Typically, one third of the course found it way too fast, another third way too slow, and the remaining third just about right. While there was no way to closely observe the nature of group work for the assignments, we always had the impression that in the end of the day, one or two people carried groups and others were dragged along, leading to frustration and little learning.</p>
+<p>Having had good experiences with the flipped classroom concept in the Summer 2020, I will now employ it in this course as well. It allows to develop all dimensions of the learning objectives in a meaningful fashion.</p>
+<p>The weekly schedule will be as follows:</p>
+<ul>
+<li>Before class, there will be:
+<ul>
+<li>Self-paced learning of concepts / knowledge. We will provide you with screencasts, literature, or short programming problems that will allow you to acquaint yourself <strong>at your own pace</strong> with the material.</li>
+<li>Short quizzes, which allow you to check your knowledge. Note that these do <strong>not</strong> constitute tests. They do not enter the grading in any way, they are for you to check whether you understood a particular concept.</li>
+</ul></li>
+<li>During class, there will be
+<ul>
+<li>Carefully designed group work in order to deepen your understanding of certain topics</li>
+<li>Class discussions to collect the results from the group work and to foster presentation skills</li>
+<li>Evaluation of everybody’s contributions to group work via the Pentabilities system</li>
+</ul></li>
+</ul>
+<p>At a lower frequency, there will be: - Challenging homeworks, which you will partly work on during class time - Personalised feedback from the Pentabilities system and your reflection on it. - A final project that you should be able to use in another context, too.</p>
+<p>Combined, these elements should allow you to - acquire the basic knowledge at your own pace - deepen it in group work - improve your personal skills in self-directed learning - improve your social skills with the help of the Pentabilities system</p>
+<h2 id="assessment">Assessment</h2>
+<p>As the teaching style, our choice of assessment criteria is guided by the learning objectives. That is, the different components require your skills along the dimensions of methods, tools, personal skills, and social skills. We need to respect the rules set by the examination regulations; otherwise the weighting of the components would be <strong>much</strong> more uniform.</p>
+<p>In particular, there will be 1. plenty of group work on challenging projects <em>(relevant for all four dimensions)</em>, 1. accompanied by Pentabilities <em>(personal and social skills)</em>, 1. and a final project of your choice <em>(methods, personal skills, and tools unless you want to use other tools, which is perfectly fine)</em>, which would ideally be useful for you in other contexts, too.</p>
+<p>The remainder of this section is about the precise rules for grading and for the final project. Please also see the document on Pentabilities for that component. Note that large parts of the section on the final project will only become comprehensible as the course progresses.</p>
+<h3 id="grading">Grading</h3>
+<p><strong>In order to receive credits for this course, you will need to register on BASIS between 9 and 16 November!</strong></p>
+<p>Grading will be based on a term paper (programming project). You will be able to improve your grade by completing a total of six homeworks and taking part in improving your group’s work via the Pentabilities system.</p>
+<p>The maximum number of points on the final project are 150. The grading scheme is as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Grade</th>
+<th>Minimum number of points</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.0</td>
+<td>147</td>
+</tr>
+<tr class="even">
+<td>1.3</td>
+<td>139</td>
+</tr>
+<tr class="odd">
+<td>1.7</td>
+<td>131</td>
+</tr>
+<tr class="even">
+<td>2.0</td>
+<td>123</td>
+</tr>
+<tr class="odd">
+<td>2.3</td>
+<td>115</td>
+</tr>
+<tr class="even">
+<td>2.7</td>
+<td>107</td>
+</tr>
+<tr class="odd">
+<td>3.0</td>
+<td>99</td>
+</tr>
+<tr class="even">
+<td>3.3</td>
+<td>91</td>
+</tr>
+<tr class="odd">
+<td>3.7</td>
+<td>83</td>
+</tr>
+<tr class="even">
+<td>4.0</td>
+<td>75</td>
+</tr>
+</tbody>
+</table>
+<p>The minimum requirement for passing the course is to obtain at least 75 points on the term paper. It is not possible to jump from not passing to passing via extra points accumulated via the homework assignments / group work. You can earn up to 15 extra points, which will allow you to improve your grade by up to 0.7 units.</p>
+<p>The extra points will be determined as follows: - Depending on whether you hand in a homework assignment and how well you complete the tasks, you will receive 0, 0.5, 1, 1.5, or 2 extra points for it. - Depending on whether you hand in a reflection on your contribution to group work on January 7 and how detailed it is, you will receive 0, 0.5, 1, 1.5, or 2 extra points for it. Please note that regular participation in the Pentabilities process is a prerequisite (also see the extra document on the Pentabilities). - For regular participation in the Pentabilities process during the months January and February, you will receive 1 point (also see the extra document on the Pentabilities).</p>
+<h3 id="rules-for-the-final-project">Rules for the Final Project</h3>
+<p>Overall, you should convince us that you have a met the learning objectives of this course that you find under “methods”. I.e., very abstractly, you are able to solve interesting economic problems that require the help of a computer in a way that is reproducible by others.</p>
+<p>We will agree on a topic for each final project during the last session, i.e., on <strong>11 February 2021</strong>. You should then provide us with a set of script(s) that you wrote to solve a particular problem on <strong>14 March 2021</strong> at the latest. This could be, for example, polished code from a seminar paper that you wrote; or some scripts to automate annoying, tedious tasks.</p>
+<p>Here are some more detailed notes. Most probably, they are not comprehensible before the course but they will be helpful once you get started.</p>
+<ol type="1">
+<li><p>Please work on Github.</p>
+<p>The last time I checked, GitHub placed a hard limit of 100MB on individual files. So do not include such files in your repository. If you are a PhD student, you want to keep larger data under VC, and you will continue working on the project, please ping me for an alternative service.</p></li>
+<li><p>Grading will be based on programming style, task complexity, how much time it takes to understand where you are headed, whether your results are reproducible (depends a bit on the project), and your use of Git.</p>
+<p>Making use of the project templates is by no means a requirement, but doing so will be useful for most projects. Webscraping is the clear exception here (i.e., this would be a separate step before applying the pytask machinery to the scraped data). In any case, it needs to be clear why the structure you chose for your project is useful for what you want to get done.</p></li>
+<li><p>It is no requirement that we are able to run your code. However, if no data or software requirements restrictions apply, doing so makes things easier for us. But you should use whatever data or software are most useful for you.</p></li>
+<li><p>In any case, provide a README that specifies the environment needed to run your project. That is, anything not included in your Github repository. This includes all required software (including things like Python libraries, R packages, Stata ado-commands, …), on which operating system it has been tested, external data, etc.. If you just use Python and/or R, the most helpful strategy is to use a conda environment file.</p></li>
+<li><p><strong>When you are done, place a tag called</strong> <code>epp-final-project</code> <strong>on the commit that we should look at. Add me (hmgaudecker), Gregor Böhl (gboehl), and Janos Gabler (janosg) to the project.</strong></p></li>
+</ol>
+<h2 id="required-programmes">Required programmes</h2>
+<ol type="1">
+<li><p><a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+<p>The most important programme when coding is a versatile editor. VS Code is cross-platform, stable, free, fast, and very extensible. When installing on Windows, be sure to tick all boxes so you register it as the default editor.</p>
+<p>Feel free to install the same packages as I did, which you can find <a href="https://www.wiwi.uni-bonn.de/gaudecker/computing_resources.html#my-settings-for-the-vs-code-editor">here</a>.</p>
+<p>Crucially, we will need the <a href="https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare">Live Share extension</a>, which will allow joint collaboration in groups.</p></li>
+<li><p>Three more (sets of) programmes:</p>
+<ul>
+<li>The <a href="https://www.anaconda.com/products/individual">Anaconda Python Distribution</a> including Python version 3.6 or higher</li>
+<li><a href="https://git-scm.com/">Git</a> <strong>version 2.23 or higher</strong></li>
+<li>A modern LaTeX distribution (e.g. <a href="www.tug.org/texlive/">TeXLive</a>, <a href="http://tug.org/mactex/">MacTex</a>, or <a href="http://miktex.org/">MikTex</a>).</li>
+</ul>
+<p>You can just follow steps 1.-3. on <a href="https://econ-project-templates.readthedocs.io/en/stable/getting_started.html#preparing-your-system">this page</a>. Ignore the point about Atom, it is an inferior alternative to VS Code.</p></li>
+</ol>
+</body>
+</html>
