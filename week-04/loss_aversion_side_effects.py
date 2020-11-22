@@ -27,10 +27,12 @@ loss_aversion_coefficient = 2.0
 # Define the monetary payoffs.
 payoffs = [500, -550]
 
-# Compute the utility values and print them to the screen.
+# Compute the utility values
 evaluations = power_utility_loss_aversion(
     payoffs, power_coefficient, loss_aversion_coefficient
 )
+
+# Print the utility values to the screen.
 print(evaluations)
 
 # Goal: Understand what happened here.

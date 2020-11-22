@@ -7,7 +7,7 @@
   <title>pentabilities-guide-reflection-faq</title>
   <style>
     html {
-      line-height: 1.7;
+      line-height: 1.5;
       font-family: Georgia, serif;
       font-size: 20px;
       color: #1a1a1a;
@@ -15,7 +15,7 @@
     }
     body {
       margin: 0 auto;
-      max-width: 40em;
+      max-width: 36em;
       padding-left: 50px;
       padding-right: 50px;
       padding-top: 50px;
@@ -35,6 +35,7 @@
       body {
         background-color: transparent;
         color: black;
+        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -45,7 +46,7 @@
       }
     }
     p {
-      margin-top: 1.7em;
+      margin: 1em 0;
     }
     a {
       color: #1a1a1a;
@@ -57,59 +58,82 @@
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.7em;
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
     }
     ol, ul {
       padding-left: 1.7em;
-      margin-top: 1.7em;
+      margin-top: 1em;
     }
     li > ol, li > ul {
       margin-top: 0;
     }
     blockquote {
-      margin: 1.7em 0 1.7em 1.7em;
+      margin: 1em 0 1em 1.7em;
       padding-left: 1em;
       border-left: 2px solid #e6e6e6;
-      font-style: italic;
+      color: #606060;
     }
     code {
       font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      background-color: #f0f0f0;
       font-size: 85%;
       margin: 0;
-      padding: .2em .4em;
     }
     pre {
-      line-height: 1.5em;
-      padding: 1em;
-      background-color: #f0f0f0;
+      margin: 1em 0;
       overflow: auto;
     }
     pre code {
       padding: 0;
       overflow: visible;
     }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
     hr {
       background-color: #1a1a1a;
       border: none;
       height: 1px;
-      margin-top: 1.7em;
+      margin: 1em 0;
     }
     table {
+      margin: 1em 0;
       border-collapse: collapse;
       width: 100%;
       overflow-x: auto;
       display: block;
+      font-variant-numeric: lining-nums tabular-nums;
     }
-    th, td {
-      border-bottom: 1px solid lightgray;
-      padding: 1em 3em 1em 0;
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
     }
     header {
-      margin-bottom: 6em;
+      margin-bottom: 4em;
       text-align: center;
     }
-    nav a:not(:hover) {
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
       text-decoration: none;
     }
     code{white-space: pre-wrap;}
@@ -125,7 +149,8 @@
   <![endif]-->
 </head>
 <body>
-<h4 id="effective-programming-practices-for-economists-winter-term-202021">Effective Programming Practices for Economists, Winter Term 2020/21</h4>
+<h4 id="effective-programming-practices-for-economists">Effective Programming Practices for Economists</h4>
+<h4 id="winter-term-202021">Winter Term 2020/21</h4>
 <h4 id="universität-bonn-department-of-economics">Universität Bonn, Department of Economics</h4>
 <h4 id="prof.-dr.-hans-martin-von-gaudecker">Prof. Dr. Hans-Martin von Gaudecker</h4>
 <h1 id="introduction-to-pentabilities-logo">Introduction to <img src="data:image/png;base64,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V5uScDGh0O+doDQxDJz3NuQo/m5IlMsYCwYRaqvMEE4t6JdtAJcvpX1/TS8N/9le/bHN+ovP7j8d8Hc//7sToVYEuv8F5BC+UvvZ9IoAAA+vaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA0LjQuMC1FeGl2MiI+CiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICB4bWxuczppcHRjRXh0PSJodHRwOi8vaXB0Yy5vcmcvc3RkL0lwdGM0eG1wRXh0LzIwMDgtMDItMjkvIgogICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iCiAgICB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIgogICAgeG1sbnM6cGx1cz0iaHR0cDovL25zLnVzZXBsdXMub3JnL2xkZi94bXAvMS4wLyIKICAgIHhtbG5zOkdJTVA9Imh0dHA6Ly93d3cuZ2ltcC5vcmcveG1wLyIKICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIgogICAgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICB4bXBNTTpEb2N1bWVudElEPSJnaW1wOmRvY2lkOmdpbXA6ZWI4NjIzNWQtNWI2My00YmRhLWJkMzAtNjIzMDQ2ZWVlMWExIgogICB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOmJhZDg4OWU5LWVmZDQtNGJhZi1hYTlhLWZiOWVmYmY5ZTkwNiIKICAgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjAyNzhlM2NkLWE2MzUtNDI0OC1hNWVlLTU1MTU1MjMxNjcyZiIKICAgR0lNUDpBUEk9IjIuMCIKICAgR0lNUDpQbGF0Zm9ybT0iTGludXgiCiAgIEdJTVA6VGltZVN0YW1wPSIxNjAzMjA0Mzk3NTgxMTIzIgogICBHSU1QOlZlcnNpb249IjIuMTAuMjAiCiAgIGRjOkZvcm1hdD0iaW1hZ2UvcG5nIgogICBleGlmOlBpeGVsWERpbWVuc2lvbj0iNjY2IgogICBleGlmOlBpeGVsWURpbWVuc2lvbj0iMjYyIgogICB4bXA6Q3JlYXRvclRvb2w9IkdJTVAgMi4xMCI+CiAgIDxpcHRjRXh0OkxvY2F0aW9uQ3JlYXRlZD4KICAgIDxyZGY6QmFnLz4KICAgPC9pcHRjRXh0OkxvY2F0aW9uQ3JlYXRlZD4KICAgPGlwdGNFeHQ6TG9jYXRpb25TaG93bj4KICAgIDxyZGY6QmFnLz4KICAgPC9pcHRjRXh0OkxvY2F0aW9uU2hvd24+CiAgIDxpcHRjRXh0OkFydHdvcmtPck9iamVjdD4KICAgIDxyZGY6QmFnLz4KICAgPC9pcHRjRXh0OkFydHdvcmtPck9iamVjdD4KICAgPGlwdGNFeHQ6UmVnaXN0cnlJZD4KICAgIDxyZGY6QmFnLz4KICAgPC9pcHRjRXh0OlJlZ2lzdHJ5SWQ+CiAgIDx4bXBNTTpIaXN0b3J5PgogICAgPHJkZjpTZXE+CiAgICAgPHJkZjpsaQogICAgICBzdEV2dDphY3Rpb249InNhdmVkIgogICAgICBzdEV2dDpjaGFuZ2VkPSIvIgogICAgICBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjgxMGYyNGFkLTJkNzYtNGRlZC1iNGE4LTM0MGE5NWFhZDIwYiIKICAgICAgc3RFdnQ6c29mdHdhcmVBZ2VudD0iR2ltcCAyLjEwIChMaW51eCkiCiAgICAgIHN0RXZ0OndoZW49IiswMjowMCIvPgogICAgPC9yZGY6U2VxPgogICA8L3htcE1NOkhpc3Rvcnk+CiAgIDxwbHVzOkltYWdlU3VwcGxpZXI+CiAgICA8cmRmOlNlcS8+CiAgIDwvcGx1czpJbWFnZVN1cHBsaWVyPgogICA8cGx1czpJbWFnZUNyZWF0b3I+CiAgICA8cmRmOlNlcS8+CiAgIDwvcGx1czpJbWFnZUNyZWF0b3I+CiAgIDxwbHVzOkNvcHlyaWdodE93bmVyPgogICAgPHJkZjpTZXEvPgogICA8L3BsdXM6Q29weXJpZ2h0T3duZXI+CiAgIDxwbHVzOkxpY2Vuc29yPgogICAgPHJkZjpTZXEvPgogICA8L3BsdXM6TGljZW5zb3I+CiAgPC9yZGY6RGVzY3JpcHRpb24+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz535qyYAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV/TSqVUHYwg4pChOlkQFXHUKhShQqgVWnUwH/2CJg1Jiouj4Fpw8GOx6uDirKuDqyAIfoA4OTopukiJ/0sKLWI8OO7Hu3uPu3cA16gomhUaBzTdNtPJhJDNrQrhV0TAoxcDCEmKZcyJYgq+4+seAbbexVmW/7k/R4+atxQgIBDPKoZpE28QT2/aBuN9Yl4pSSrxOfGYSRckfmS67PEb46LLHMvkzUx6npgnFoodLHewUjI14inimKrplM9lPVYZbzHWKjWldU/2wmheX1lmOs1hJLGIJYgQIKOGMiqwEadVJ8VCmvYTPv4h1y+SSyZXGQo5FlCFBsn1g/3B726twuSElxRNAF0vjvMxAoR3gWbdcb6PHad5AgSfgSu97a82gJlP0uttLXYE9G0DF9dtTd4DLneAwSdDMiVXCtLkCgXg/Yy+KQf03wKRNa+31j5OH4AMdZW6AQ4OgdEiZa/7vLu7s7d/z7T6+wEW+nKC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" alt="Pentabilities Logo" /></h1>
@@ -157,7 +182,7 @@
 <p>The Pentabilities system is designed to develop the five major social and emotional skills, called the “pentabilities”: Responsibility, Cooperation, Autonomy and initiative, Emotional management, and Thinking abilities. Each of these pentabilities comes with a set of behaviours, which are observable during group work.</p>
 <p>I have used the system before. Personally, I find it extremely valuable to seriously read through the sets of Pentabilities and behaviours and think about how they are important in group work. As with the programming part of the course, developing a common language will expand the set of things that we can have meaningful conversations about.</p>
 <h3 id="responsibility">1. Responsibility</h3>
-<p>Includes the actions directed to accomplish the set goals. </p>
+<p>Includes the actions directed to accomplish the set goals.</p>
 <ul>
 <li><strong>Works in a constant manner</strong></li>
 <li><strong>Stays connected to the group’s activity</strong> – paying attention to the task at hand, instead of being attentive to other unrelated issues (friends, smartphone, window, interior world, …)</li>
@@ -171,7 +196,7 @@
 <p>Actions that facilitate task performance in a group; includes listening, common decision making and conflict resolution.</p>
 <ul>
 <li><strong>Listens to others</strong></li>
-<li><strong>Incorporates what others say</strong> – this implies listening AND taking into account what others say to add, build, or think upon. How do you see that? You can not see the mental process of thinking or building upon other’s comments, but you do in the actions that follow: changing an argument, writing it down, modifying a piece of a construction, asking for clarification, etc. </li>
+<li><strong>Incorporates what others say</strong> – this implies listening AND taking into account what others say to add, build, or think upon. How do you see that? You can not see the mental process of thinking or building upon other’s comments, but you do in the actions that follow: changing an argument, writing it down, modifying a piece of a construction, asking for clarification, etc.</li>
 <li><strong>Encourages peers’ participation</strong> – This can be shown in many different forms: inviting someone to talk by waiting to start talking one self, by a gesture or direct invitation, posing open questions to the group, etc.</li>
 <li><strong>Engages in group decision making</strong> – Shares his comments and performs activities in a way that facilitates that the group reaches decisions that push the project / problem / learning forward.</li>
 <li><strong>Facilitates conflict resolution</strong> – by avoiding tensions, moderating discussions, setting a tone of relation that leads to efficient conflict resolution (being generous, kind, avoiding judgments or harsh comments).</li>
@@ -191,7 +216,7 @@
 <h3 id="emotion-management">4. Emotion management</h3>
 <p>Is aware of his/her emotions and those of others, and manages them well.</p>
 <ul>
-<li><strong>Transmits cheerfulness</strong> – confers a positive environment, lifting the surrounding spirits; through good humor, own enjoyment, encouraging others through positive talk. </li>
+<li><strong>Transmits cheerfulness</strong> – confers a positive environment, lifting the surrounding spirits; through good humor, own enjoyment, encouraging others through positive talk.</li>
 <li><strong>Remains calm under pressure</strong> – remains relaxed, performs well under stressful situations. It is the contrary of being worried about things.</li>
 <li><strong>Controls emotions when conflict arises</strong> – regulates temper, anger, frustration in the face of conflicts.</li>
 <li><strong>Accepts the possibility of making mistakes</strong> – does not get upset or discouraged in the face of an error. It is the opposite of being irritated or angry in front of a mistake.</li>
@@ -203,12 +228,12 @@
 <ul>
 <li><strong>Relates new content with previous knowledge</strong> – making connections with previous topics, own experiences, other disciplines to analyse situations and to reason.</li>
 <li><strong>Makes good reflections on the content</strong> – applying rationality, good thinking, to construct, express, verify, justify, contrast arguments or statements related with the content at hand.</li>
-<li><strong>Makes good reflection on internal personal processes</strong> – showing awareness of how one feels, thinks, proceeds and reacts. </li>
+<li><strong>Makes good reflection on internal personal processes</strong> – showing awareness of how one feels, thinks, proceeds and reacts.</li>
 <li><strong>Asks good questions (to improve understanding or to move forward)</strong> – questions that show curiosity and interest  for knowing, understanding.</li>
 <li><strong>Has creative ideas (explores alternative paths)</strong> – produces original, alternative ideas that lead to  a positive contribution. The contrary is common or conformist ideas.</li>
-<li><strong>Proposes good strategies for problem solving</strong> – problem solving includes understanding and translate the proposed problem to the language and parameters of a particular area of knowledge; use the specific concepts, tools and strategies to solve the problem. </li>
+<li><strong>Proposes good strategies for problem solving</strong> – problem solving includes understanding and translate the proposed problem to the language and parameters of a particular area of knowledge; use the specific concepts, tools and strategies to solve the problem.</li>
 <li><strong>Willing to discover different perspectives</strong> – showing flexibility, being open-minded in examining different perspectives rationally; for example, look at different sides of a complex issue, being interested in examining different points of view or in learning new facts. This is a behaviour that indicates critical thinking. It is the contrary of showing inflexibility, rigidity, intolerance and showing prejudices.</li>
-<li><strong>Expresses ideas effectively (correction, precision and structure)</strong> – the expression can be oral, written, conceptual maps, graphs, formulas, musical interpretations or drawing. </li>
+<li><strong>Expresses ideas effectively (correction, precision and structure)</strong> – the expression can be oral, written, conceptual maps, graphs, formulas, musical interpretations or drawing.</li>
 </ul>
 <h2 id="feedback">Feedback</h2>
 <p>At mid-term and after the course, you will receive personalised feedback documents. Each consists of a summary of the recorded evaluations of the socio-emotional skills and behaviours that justify them. The analysis will include your self-assessment, your peers’ assessment, and teachers’ assessment.</p>
@@ -220,7 +245,7 @@
 <p>Here are some guiding questions you would ideally address in your reflection.</p>
 <ol type="1">
 <li>How do the assessments I received reflect how I perceive I have worked, how I contributed to, and what I got out of this course? Are there any significant surprises? Which? Why?</li>
-<li>What am I good at? How have I become good at it? </li>
+<li>What am I good at? How have I become good at it?</li>
 <li>What skills do I need to develop? Why do I think it is important that I do so? How do they affect my work and personal progress?</li>
 <li>Based on your previous answer, write a road map that guides you from where you are to where you want to be in the following sessions.</li>
 </ol>
