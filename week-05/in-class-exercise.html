@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>in-class-exercise</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h4 id="effective-programming-practices-for-economists">Effective Programming Practices for Economists</h4>
+<h4 id="winter-term-202021">Winter Term 2020/21</h4>
+<h4 id="universität-bonn-department-of-economics">Universität Bonn, Department of Economics</h4>
+<h4 id="prof.-dr.-hans-martin-von-gaudecker">Prof. Dr. Hans-Martin von Gaudecker</h4>
+<h1 id="in-class-exercise">In-class exercise</h1>
+<p>Please respect the time limits. Of course you do not need to set a timer, but it is important that you make it to the very end.</p>
+<h2 id="task-1-bring-example-data-into-normal-form-35min">Task 1: Bring example data into normal form (35min)</h2>
+<p>Continue from one of the notebooks you prepared at home. If you need any commands that are not given, you should be able to find them pretty quickly by searching the web. Else, please ask!</p>
+<ol type="1">
+<li><p>Read in the April data.</p></li>
+<li><p>Make sure that all columns have a sensible data type (try: <code>apr_2020.dtypes</code>).</p></li>
+<li><p>Give the columns of the April data sensible names (careful: This might be the hardest subtask here!)</p></li>
+<li><p>Now append the April data to the November data.</p>
+<ul>
+<li>For the November data, use the version with the default index set by Pandas</li>
+<li>You may need to add another variable beforehand.</li>
+</ul></li>
+<li><p>Make the data respect the three requirements we set out in the screencast</p>
+<ol type="1">
+<li>Values do not have internal structure</li>
+<li>Tables do not contain redundant information</li>
+<li>Variable names to not have any structure</li>
+</ol>
+<p>You will need more than one table. A helpful method on DataFrames might be <code>drop_duplicates(subset=[sub])</code></p></li>
+<li><p>Give the DataFrames the sensible indexes.</p></li>
+<li><p>Modify the Gender variable so that it has the Categories “male” and “female”.</p>
+<p>First check it is of the correct dtype. If it is not, check the dtypes of the original data (November, April). What do you think is happening? Modify at the correct spot by adding a cell changing the dtype</p>
+<p>Once you are sure it has the correct dtype, this should spare you a web search:</p>
+<p><a href="https://www.google.com/search?q=pandas+change+category+names">https://www.google.com/search?q=pandas+change+category+names</a></p></li>
+</ol>
+<h2 id="task-2-total-hours-worked-10min">Task 2: Total hours worked (10min)</h2>
+<p>Say you are interested in total hours worked for the purpose of thinking about what happens to GDP (silly example on many dimensions, but disregard that). Create a variable <code>working_hours_total</code> that makes this reasonably comparable across time.</p>
+<p>Note: There is no correct answer. This is a typical judgement call you have to make, which is supposed to make the point that setting up the data can:</p>
+<ol type="a">
+<li>be very hard and</li>
+<li>have have a direct impact on your results.</li>
+</ol>
+<p>Calculate the average of total working hours in each month.</p>
+<h2 id="task-3-merging-10min">Task 3: Merging (10min)</h2>
+<p>To see how easy it is to get the data back together in one block, use two means for merging all information on any type of childcare hours, gender, and household id.</p>
+<ul>
+<li><code>pd.merge()</code></li>
+<li><code>DataFrame.join()</code></li>
+</ul>
+<p>The two are completely equivalent (in fact, <code>join</code> calls <code>merge</code> internally), but <code>merge</code> is more flexible.</p>
+<p>Assign the resulting DataFrame to a variable called <code>childcare_data</code>.</p>
+<h2 id="task-4-usage-of-data-for-household-level-project-20min">Task 4: Usage of data for household-level project (20min)</h2>
+<p>Say you are interested in the relative division of childcare tasks within households and how they might have changed in the early days of the Coronavirus crisis.</p>
+<p>You thus want to create the sum of childcare hours in a household and then look at the male and female shares by month.</p>
+<p>In a given month, we only want to keep data where both households answered <strong>and</strong> where childcare hours are larger than zero.</p>
+<ol type="1">
+<li>Sum up all childcare hours, store it in a column <code>total</code>.</li>
+<li>You can now go either via wide format (<code>pd.pivot</code>) or via several <code>groupby</code> calls, including <code>agg</code> or similar</li>
+<li>You want to use <code>query</code> and potentially things like <code>notnull()</code> in the queries.</li>
+<li>Eventually, show the mean female share of childcare hours by month.</li>
+</ol>
+<p>This is tough either way, do not worry if you don’t make it!</p>
+<h2 id="task-5-indexes-bonus-if-you-have-time">Task 5: Indexes (Bonus if you have time)</h2>
+<p>Remember we selected only heterosexual couples. Could you get by without the individual identifier? If so, would you think that is a sensible thing to do?</p>
+<h2 id="task-6-evaluation-of-pentabilities-10min">Task 6: Evaluation of Pentabilities (10min)</h2>
+<p>All dimensions that you could observe.</p>
+<p>Remember you do not have to rate every behaviour there is; maybe some were not observable.</p>
+</body>
+</html>
