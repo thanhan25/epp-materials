@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>in-class-exercise</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h4 id="effective-programming-practices-for-economists">Effective Programming Practices for Economists</h4>
+<h4 id="winter-term-202021">Winter Term 2020/21</h4>
+<h4 id="universität-bonn-department-of-economics">Universität Bonn, Department of Economics</h4>
+<h4 id="prof.-dr.-hans-martin-von-gaudecker">Prof. Dr. Hans-Martin von Gaudecker</h4>
+<h1 id="in-class-exercise">In-class exercise</h1>
+<p>Please respect the time limits. Of course you do not need to set a timer, but it is important that you make it to the very end.</p>
+<h2 id="task-1-10min">Task 1: (10min)</h2>
+<ul>
+<li>Explain each another what the git “staging area” is.</li>
+<li>Find an example for when it is useful.</li>
+</ul>
+<h2 id="task-2-git-history-30min">Task 2: git history (30min)</h2>
+<ul>
+<li><p>Go to <a href="https://github.com/iame-uni-bonn/risk_aversion">this repo</a> and click on “Fork” in the upper right corner. You will be asked where to fork to. Choose your own account. Once the process is complete, clone <em>your</em> newly created repository to your local machine.</p>
+<p><strong>Note:</strong> we had to use forking here for technical reasons. For the scope of this course, there is no need to understand or research what forks are and why you would use them. You can safely ignore this and just follow the instructions.</p></li>
+<li><p>You may not understand list comprehensions yet. You thus want to get rid of them (if you understand them, you may rightfully conclude that the way that a list comprehension is used here is not yet helpful).</p>
+<p>Use <code>git log</code>, <code>git diff</code>, and <code>git checkout</code> to go through the history of the project and search for the last commit that did not use list comprehensions. Look up the features of those commands as you need them.</p></li>
+<li><p>Use <code>git reset</code> to revert your repository to this commit.</p></li>
+</ul>
+<h2 id="task-6-evaluation-of-pentabilities-10min">Task 6: Evaluation of Pentabilities (10min)</h2>
+<ul>
+<li>Please rate all dimensions that you could observe.</li>
+<li>Remember you do not have to rate every behaviour there is; maybe some were not observable. But do think hard about whether you can say something.</li>
+<li>Give comments if possible; the more concrete your feedback is, the better.</li>
+</ul>
+</body>
+</html>
