@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Hans-Martin von Gaudecker" />
+  <title>Debugging — Strategies</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Debugging — Strategies</h1>
+<p class="author">Hans-Martin von Gaudecker</p>
+</header>
+<h1 id="acknowledgment">Acknowledgment</h1>
+<p>This lecture is directly adapted from an early version of the <a href="https://software-carpentry.org">Software Carpentry</a> project.</p>
+<h1 id="debugging-strategies">Debugging strategies</h1>
+<p>(Eisenstadt, 1993)</p>
+<ul>
+<li><strong>Expert recognised cliché</strong></li>
+<li>Ask an oracle programmer and they will spot the bug class immediately</li>
+<li>Works very seldomly unless you happen to be working with one on the same project</li>
+</ul>
+<h1 id="debugging-strategies-1">Debugging strategies</h1>
+<p>(Eisenstadt, 1993)</p>
+<ul>
+<li><strong>Inspeculation</strong></li>
+<li>A hybrid of
+<ul>
+<li>“inspection” (code inspection),</li>
+<li>“simulation” (hand-simulation),</li>
+<li>and “speculation”.</li>
+</ul></li>
+<li>No experimentation or data gathering, but rather “thinking about” the code.</li>
+</ul>
+<h1 id="debugging-strategies-2">Debugging strategies</h1>
+<p>(Eisenstadt, 1993)</p>
+<ul>
+<li><strong>Gather data</strong></li>
+<li>What we usually think of when we say “debugging”</li>
+<li>The rest of these slides is about how to go about it in a systematic way</li>
+</ul>
+<h1 id="agans-rules">Agans’ Rules</h1>
+<p>(Agans, 2002)</p>
+<ul>
+<li>Many people make debugging harder than necessary by:
+<ul>
+<li>Using inadequate tools</li>
+<li>Not going about it systematically</li>
+<li>Becoming impatient</li>
+</ul></li>
+</ul>
+<h1 id="agans-rules-1">Agans’ Rules</h1>
+<p>(Agans, 2002)</p>
+<ul>
+<li>Agans’ Rules describe how to apply the scientific method to debugging
+<ul>
+<li>Observe a failure</li>
+<li>Invent a hypothesis explaining the cause</li>
+<li>Test the hypothesis by running an experiment (i.e., a test)</li>
+<li>Repeat until the bug has been found</li>
+</ul></li>
+</ul>
+<h1 id="rule-0-get-it-right-the-first-time">Rule 0: Get it right the first time</h1>
+<ul>
+<li>The simplest bugs to fix are the ones that do not exist</li>
+<li>Design, reflect, discuss, then code</li>
+<li>“A week of hard work can sometimes save you an hour of thought”</li>
+</ul>
+<h1 id="rule-0-get-it-right-the-first-time-1">Rule 0: Get it right the first time</h1>
+<ul>
+<li>Design your code with testing and debugging in mind</li>
+<li>Minimize the amount of “spooky action at a distance”</li>
+<li>Minimize the number of things programmers have to keep track of at any one time</li>
+<li>Train yourself to do things right, so that you will code well even when you are tired, stressed, and facing a deadline</li>
+</ul>
+<h1 id="rule-0-get-it-right-the-first-time-2">Rule 0: Get it right the first time</h1>
+<blockquote>
+<p>“Everyone knows that debugging is twice as hard as writing a program in the first place. So if you are as clever as you can be when you write it, how will you ever debug it?”</p>
+</blockquote>
+<p>Brian Kernighan</p>
+<h1 id="rule-1-what-is-it-supposed-to-do">Rule 1: What is it supposed to do?</h1>
+<ul>
+<li>First step is knowing what the problem is
+<ul>
+<li>“It doesn’t work” is not good enough</li>
+<li>What exactly is going wrong?</li>
+<li>How do you know?</li>
+<li>You will learn a lot by following execution in a debugger and trying to anticipate what the program is going to do next</li>
+</ul></li>
+</ul>
+<h1 id="rule-1-what-is-it-supposed-to-do-1">Rule 1: What is it supposed to do?</h1>
+<ul>
+<li>Requires you to know how the software is supposed to behave</li>
+<li>Not always obvious …</li>
+</ul>
+<h1 id="rule-2-is-it-plugged-in">Rule 2: Is it plugged in?</h1>
+<ul>
+<li>Are you actually exercising the problem that you think you are?
+<ul>
+<li>Are you giving it the right test data?</li>
+<li>Is it configured the way you think it is?</li>
+<li>Is it the version you think it is?</li>
+<li>Has the feature actually been implemented yet?</li>
+<li>Why are you sure?</li>
+</ul></li>
+<li>Maybe the reason you cannot isolate the problem is that it is not there</li>
+</ul>
+<h1 id="rule-3-make-it-fail">Rule 3: Make it fail</h1>
+<ul>
+<li>You can only debug things when they go wrong</li>
+<li>So find a test case that makes the code fail every time
+<ul>
+<li>Then try to find a simpler one</li>
+<li>Or start with a trivially simple test case that passes, then add complexity until it fails</li>
+</ul></li>
+<li>Each experiment becomes a test case
+<ul>
+<li>So that you can re-run all of them with a single command</li>
+<li>How else are you going to know that the bug has actually been fixed?</li>
+</ul></li>
+</ul>
+<h1 id="rule-3-make-it-fail-1">Rule 3: Make it fail</h1>
+<ul>
+<li>Use the scientific method</li>
+<li>Formulate a hypothesis, make a prediction, conduct an experiment, repeat</li>
+</ul>
+<h1 id="rule-4-divide-and-conquer">Rule 4: Divide and conquer</h1>
+<ul>
+<li>The smaller the gap between cause and effect, the easier the relationship is to see</li>
+<li>So once you have a test that makes the system fail, use it to isolate the faulty subsystem
+<ul>
+<li>Examine the input of the code that is failing</li>
+<li>If that is wrong, look at the preceding code’s input</li>
+<li>And so on and so forth</li>
+</ul></li>
+</ul>
+<h1 id="rule-4-divide-and-conquer-1">Rule 4: Divide and conquer</h1>
+<ul>
+<li>Use <code>assert</code> to check things that ought to be right
+<ul>
+<li>“Fail early, fail often”</li>
+<li>A good way to stop yourself from introducing new bugs as you fix old ones</li>
+</ul></li>
+<li>When you do fix the bug, see whether you can add assertions to prevent it reappearing
+<ul>
+<li>If you made the mistake once, odds are that you, or someone else, will make it again</li>
+</ul></li>
+<li>Another argument against duplicated code
+<ul>
+<li>Few things are as frustrating as fixing a bug, only to have it crop up again elsewhere</li>
+</ul></li>
+</ul>
+<h1 id="rule-5-change-one-thing-at-a-time-for-a-reason">Rule 5: Change one thing at a time, for a reason</h1>
+<ul>
+<li>Replacing random chunks of code is unlikely to help
+<ul>
+<li>If you got it wrong the first time, what makes you think you will get it right the second? Or the ninth?</li>
+<li>So always have a hypothesis before making a change</li>
+</ul></li>
+<li>Every time you make a change, re-run all of your tests immediately
+<ul>
+<li>The more things you change at once, the harder it is to know what is responsible for what</li>
+<li>And the harder it is to keep track of what you have done, and what effect it had</li>
+<li>Changes can also often uncover (or introduce) new bugs</li>
+</ul></li>
+</ul>
+<h1 id="rule-6-write-it-down">Rule 6: Write it down</h1>
+<ul>
+<li>Science works because scientists keep records
+<ul>
+<li>Did <span class="math inline"><em>γ</em><sub>1</sub> = 0</span> together with <span class="math inline"><em>x</em><sub>1</sub> = 50</span> cause the crash?</li>
+<li>Or was it <span class="math inline"><em>x</em><sub>2</sub> =  − 5</span>?</li>
+<li>Or was <span class="math inline"><em>γ</em><sub>2</sub></span> not set to the default value after all?&quot;</li>
+</ul></li>
+<li>Records are particularly useful when getting help
+<ul>
+<li>People are more likely to listen when you can explain clearly what you did</li>
+</ul></li>
+</ul>
+<h1 id="rule-7-be-humble">Rule 7: Be humble</h1>
+<ul>
+<li>If you cannot find it in 15 minutes, ask for help
+<ul>
+<li>Just explaining the problem aloud is often enough</li>
+<li>“Never debug standing up.” (Gerald Weinberg) — rushing makes things worse</li>
+</ul></li>
+<li>Do not keep telling yourself why it should work
+<ul>
+<li>If it does not, it does not</li>
+<li>Never debug while grinding your teeth, either …</li>
+</ul></li>
+<li>Keep track of your mistakes
+<ul>
+<li>Just as runners keep track of their time for the 100m sprint</li>
+<li>“You cannot manage what you cannot measure.” (Bill Hewlett)</li>
+</ul></li>
+</ul>
+<h1 id="to-reiterate">To reiterate …</h1>
+<ul>
+<li>Debugging is not a black art</li>
+<li>Like medical diagnosis, it is a skill that can be studied and improved</li>
+<li>You are going to spend a lot of time doing it: You might as well learn how to do it well</li>
+</ul>
+<h1 id="agans-rules-2">Agans’ rules</h1>
+<ol start="0" type="1">
+<li>Get it right the first time</li>
+<li>What is it supposed to do?</li>
+<li>Is it plugged in?</li>
+<li>Make it fail</li>
+<li>Divide and conquer</li>
+<li>Change one thing at a time, for a reason</li>
+<li>Write it down</li>
+<li>Be humble</li>
+</ol>
+</body>
+</html>
