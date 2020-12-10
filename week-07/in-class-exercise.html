@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>in-class-exercise</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h4 id="effective-programming-practices-for-economists">Effective Programming Practices for Economists</h4>
+<h4 id="winter-term-202021">Winter Term 2020/21</h4>
+<h4 id="universität-bonn-department-of-economics">Universität Bonn, Department of Economics</h4>
+<h4 id="prof.-dr.-hans-martin-von-gaudecker">Prof. Dr. Hans-Martin von Gaudecker</h4>
+<h1 id="in-class-exercise">In-class exercise</h1>
+<p>Please respect the time limits. Of course you do not need to set a timer, but it is important that you make it to the very end.</p>
+<h2 id="task-1-debugging-30min">Task 1: Debugging (30min)</h2>
+<ul>
+<li><p>Go to <a href="https://classroom.github.com/g/LEkqDQY2">https://classroom.github.com/g/LEkqDQY2</a> to set up a repository for your group as usual.</p></li>
+<li><p>You will find a file <code>cobb_douglas.py</code> in that repository. This script contains several errors.</p></li>
+<li><p>Look together for the bugs using Live Share. Once you think you encountered a bug, discuss your hypothesis with your fellow group members. Use the symbolic debugger to step verify your hypothesis.</p></li>
+<li><p>Feel free to add additional numbers to be calculated, if that helps.</p></li>
+<li><p>Stop your fellow group members from doing anything if they do not use the scientific method!</p></li>
+<li><p><em>Hint:</em> The correct output should be:</p>
+<pre><code>3.4739534644393735
+2.933503810642718</code></pre></li>
+<li><p><em>Note:</em> Some of the bugs may not be subtle enough to require lots of thought. But do discuss your hypothesis in any case before you change anything.</p></li>
+<li><p>Commit your changes when you are done. You may of course commit earlier versions, too.</p></li>
+</ul>
+<h2 id="task-2-pythonic-functional-constructs-list-comprehensions-20min">Task 2: Pythonic functional constructs: List comprehensions (20min)</h2>
+<p>Continue to work in <code>cobb_douglas.py</code>.</p>
+<ul>
+<li>Replace the for-loop where the calculations are done by a list comprehension.</li>
+<li>Replace the line doing the printing by <code>print(*results, sep=&quot;\n&quot;)</code>. The asterisk is doing <em>argument unpacking</em>, that is, instead of the list <code>results</code> it passes the list’s elements to the <code>print()</code> function. <em>Note:</em> If you feel like reading up on this and you find an accessible reference, please let us know about that (anything we found quickly became technical). But do not worry too much, this is not of crucial importance in this course.</li>
+<li>Commit once you are finished.</li>
+</ul>
+<h2 id="task-3-pythonic-functional-constructs-list-comprehensions-20min">Task 3: Pythonic functional constructs: List comprehensions (20min)</h2>
+<p>You want to identify the two items in the input data by something else than their order in a list.</p>
+<ul>
+<li>Think of two names of people identifying the two sets of measures.</li>
+<li>Re-write the statement defining the inputs so that <code>inputs</code> will be a dictionary.</li>
+<li>Re-write the list comprehension defining the results as a dict comprehension, which iterates over <code>inputs.items()</code>.</li>
+<li>Leave the line printing the result as it is and see what happens. Then change it to <code>print(*results, sep=&quot;\n&quot;)</code> and explain to each other what happens.</li>
+</ul>
+<h2 id="task-6-evaluation-of-pentabilities-10min">Task 6: Evaluation of Pentabilities (10min)</h2>
+<ul>
+<li>Please rate all dimensions that you could observe.</li>
+<li>Remember you do not have to rate every behaviour there is; maybe some were not observable. But do think hard about whether you can say something.</li>
+<li>Give comments if possible; the more concrete your feedback is, the better.</li>
+</ul>
+</body>
+</html>
