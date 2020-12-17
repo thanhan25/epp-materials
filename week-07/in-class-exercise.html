@@ -155,11 +155,15 @@
 <h4 id="prof.-dr.-hans-martin-von-gaudecker">Prof. Dr. Hans-Martin von Gaudecker</h4>
 <h1 id="in-class-exercise">In-class exercise</h1>
 <p>Please respect the time limits. Of course you do not need to set a timer, but it is important that you make it to the very end.</p>
-<h2 id="task-1-debugging-30min">Task 1: Debugging (30min)</h2>
+<h2 id="task-1-debugging-40min">Task 1: Debugging (40min)</h2>
 <ul>
 <li><p>Go to <a href="https://classroom.github.com/g/LEkqDQY2">https://classroom.github.com/g/LEkqDQY2</a> to set up a repository for your group as usual.</p></li>
-<li><p>You will find a file <code>cobb_douglas.py</code> in that repository. This script contains several errors.</p></li>
-<li><p>Look together for the bugs using Live Share. Once you think you encountered a bug, discuss your hypothesis with your fellow group members. Use the symbolic debugger to step verify your hypothesis.</p></li>
+<li><p>You will find a file <code>cobb_douglas.py</code> in that repository. This script contains several errors.</p>
+<p>Note that the general structure of the script is correct. In particular, no lists need to be converted into dictionaries or vice versa.</p>
+<p>Put differently, all bugs are of the type that happen because of carelessness or wrong assumptions about simple behaviour of the Python language. Not because of overall structure that could be better (of course it could be; this is a toy example).</p></li>
+<li><p>Look together for the bugs using Live Share.</p>
+<p>Once you think you encountered a bug, discuss your hypothesis with your fellow group members.</p>
+<p>Use the symbolic debugger to step through the programme in order to verify your hypothesis.</p></li>
 <li><p>Feel free to add additional numbers to be calculated, if that helps.</p></li>
 <li><p>Stop your fellow group members from doing anything if they do not use the scientific method!</p></li>
 <li><p><em>Hint:</em> The correct output should be:</p>
@@ -168,20 +172,20 @@
 <li><p><em>Note:</em> Some of the bugs may not be subtle enough to require lots of thought. But do discuss your hypothesis in any case before you change anything.</p></li>
 <li><p>Commit your changes when you are done. You may of course commit earlier versions, too.</p></li>
 </ul>
-<h2 id="task-2-pythonic-functional-constructs-list-comprehensions-20min">Task 2: Pythonic functional constructs: List comprehensions (20min)</h2>
+<h2 id="task-2-pythonic-functional-constructs-list-comprehensions-10min">Task 2: Pythonic functional constructs: List comprehensions (10min)</h2>
 <p>Continue to work in <code>cobb_douglas.py</code>.</p>
 <ul>
 <li>Replace the for-loop where the calculations are done by a list comprehension.</li>
 <li>Replace the line doing the printing by <code>print(*results, sep=&quot;\n&quot;)</code>. The asterisk is doing <em>argument unpacking</em>, that is, instead of the list <code>results</code> it passes the list’s elements to the <code>print()</code> function. <em>Note:</em> If you feel like reading up on this and you find an accessible reference, please let us know about that (anything we found quickly became technical). But do not worry too much, this is not of crucial importance in this course.</li>
 <li>Commit once you are finished.</li>
 </ul>
-<h2 id="task-3-pythonic-functional-constructs-list-comprehensions-20min">Task 3: Pythonic functional constructs: List comprehensions (20min)</h2>
+<h2 id="task-3-pythonic-functional-constructs-dict-comprehensions-20min">Task 3: Pythonic functional constructs: Dict comprehensions (20min)</h2>
 <p>You want to identify the two items in the input data by something else than their order in a list.</p>
 <ul>
 <li>Think of two names of people identifying the two sets of measures.</li>
 <li>Re-write the statement defining the inputs so that <code>inputs</code> will be a dictionary.</li>
 <li>Re-write the list comprehension defining the results as a dict comprehension, which iterates over <code>inputs.items()</code>.</li>
-<li>Leave the line printing the result as it is and see what happens. Then change it to <code>print(*results, sep=&quot;\n&quot;)</code> and explain to each other what happens.</li>
+<li>Leave the line printing the result as it is and see what happens. Then change it to <code>print(*results.items(), sep=&quot;\n&quot;)</code> and explain to each other what happens.</li>
 </ul>
 <h2 id="task-6-evaluation-of-pentabilities-10min">Task 6: Evaluation of Pentabilities (10min)</h2>
 <ul>
