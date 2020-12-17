@@ -14,7 +14,7 @@ def utility_crra(argument, exponent):
 
     numerator = argument ** (1.0 - exponent)
     denominator = 1.0 - exponent
-    out = numerator // denominator
+    out = numerator / denominator
     return out
 
 

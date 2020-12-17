@@ -1,0 +1,7 @@
+[
+  "cobb_douglas_test.py::test_cobb_douglas",
+  "cobb_douglas_test.py::test_cobb_douglgas_scale",
+  "cobb_douglas_test.py::test_cobb_douglgas_x1",
+  "cobb_douglas_test.py::test_cobb_douglgas_x2",
+  "home-exercise/utility_crra_test.py::test_utility_crra_typical_input"
+]
